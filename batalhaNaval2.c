@@ -33,6 +33,20 @@ void posicionaNavioVertical(int linha, int coluna) {
     }
 }
 
+// Função para posicionar um navio diagonalmente (cima-esquerda para baixo-direita)
+void posicionaNavioDiagonal1(int linha, int coluna) {
+    for (int i = 0; i < TAMANHO_NAVIO; i++) {
+        tabuleiro[linha + i][coluna + i] = 3; // Navio
+    }
+}
+
+// Função para posicionar um navio diagonalmente (cima-direita para baixo-esquerda)
+void posicionaNavioDiagonal2(int linha, int coluna) {
+    for (int i = 0; i < TAMANHO_NAVIO; i++) {
+        tabuleiro[linha + i][coluna - i] = 3; // Navio
+    }
+}
+
 // Função para exibir o tabuleiro
 void exibeTabuleiro() {
     printf("  ");
@@ -62,6 +76,14 @@ int main() {
     int linhaNavio2 = 5;
     int colunaNavio2 = 8;
     posicionaNavioVertical(linhaNavio2, colunaNavio2);
+
+    int linhaNavio3 = 1;
+    int colunaNavio3 = 1;
+    posicionaNavioDiagonal1(linhaNavio3, colunaNavio3);
+
+    int linhaNavio4 = 8;
+    int colunaNavio4 = 8;
+    posicionaNavioDiagonal2(linhaNavio4, colunaNavio4);
 
     // Exibe o tabuleiro
     exibeTabuleiro();
